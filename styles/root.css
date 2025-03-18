@@ -1,0 +1,42 @@
+:root {
+  --navbar: #ffffff;
+  --footer: #0B4F26;
+  --art-body: #F4F4F4;
+  --button: #0B4F26;
+  --border: #E0E0E0;
+}
+
+@font-face {
+  font-family: "popping";
+  src: url(../media/fonts/Poppins-Regular.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  background-color: var(--art-body);
+  color: rgb(0, 0, 0);
+  font-family: popping;
+  user-select: none;
+  min-height: 100vh;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: 2px solid var(--button);
+}
+
+input[type="radio"]:focus {
+  outline: none;
+}

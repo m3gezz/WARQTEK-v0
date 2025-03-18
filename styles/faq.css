@@ -1,0 +1,102 @@
+:root {
+  interpolate-size: allow-keywords;
+}
+
+main {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.head {
+  background-image: url(../media/images/Sign\ 1.png);
+  border-radius: 1rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 25px;
+  color: var(--button);
+  padding: 1rem;
+}
+
+.body {
+  width: 70%;
+  max-width: 800px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.body details {
+  background-color: var(--border);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.body summary {
+  background-color: var(--button);
+  color: var(--navbar);
+  font-weight: 900;
+  font-size: 20px;
+  padding: 1rem 0.5rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.body details::details-content {
+  height: 0;
+  transition: all 0.5s;
+}
+
+.body details[open]::details-content {
+  height: auto;
+}
+
+.body details > summary::-webkit-details-marker {
+  display: none !important;
+}
+
+.body details > summary::after {
+  content: '+';
+  /* font-size: 20px; */
+  scale: 2;
+  margin-inline: 1rem;
+  color: var(--border);
+}
+
+.body details[open] > summary::after {
+  content: '-';
+  color: var(--border);
+}
+
+.body details p {
+  background-color: var(--border);
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+@media screen and (max-width: 900px) {
+  main {
+    width: 100%;
+  }
+
+  .head {
+    border-radius: 0 0 1rem 1rem;
+  }
+
+  .body {
+    width: 90%;
+  }
+}

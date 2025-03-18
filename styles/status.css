@@ -1,0 +1,112 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  padding: 2rem 1rem;
+  width: 80%;
+  margin:  3rem auto;
+  border: 5px solid var(--button);
+  border-radius: 1rem;
+  text-align: center;
+  max-width: 1000px;
+}
+
+main > p {
+  margin-top: -3rem;
+}
+
+li > p * {
+  fill: var(--button);
+}
+
+main > ul {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  list-style: none;
+  gap: 4.5rem;
+}
+
+main > ul > li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+main > ul > li > p {
+  text-align: center;
+  color: var(--button);
+  font-weight: 600;
+}
+
+main > ul > li > div {
+  background-color: var(--border);
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  position: relative;
+  display: grid;
+  place-items: center;
+  font-weight: 600;
+}
+
+main > ul > li > div::before {
+  content: "";
+  background-color: var(--border);
+  border-radius: 1rem;
+  height: 50%;
+  width: 12rem;
+  position: absolute;
+  top: 25%;
+  left: 0%;
+  z-index: -1;
+}
+
+.one::before {
+  background-color: var(--button);
+  left: -50%;
+}
+
+.one {
+  background-color: var(--button);
+}
+
+.five::before {
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  ul {
+    flex-direction: column;
+    gap: 2rem !important;
+  }
+
+  ul > li {
+    flex-direction: row !important;
+  }
+
+  main > ul > li > div::before {
+    width: 50%;
+    height: 7rem;
+    left: 25%;
+    top: 0%;
+  }
+
+  .one::before {
+    background-color: var(--button);
+    top: -50%;
+    left: 25%;
+    height: 9rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  main {
+    width: 95%;
+    box-sizing: border-box;
+  }
+}

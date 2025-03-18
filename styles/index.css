@@ -1,0 +1,188 @@
+main > article {
+  padding: 1rem;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+main > article > div:first-child {
+  height: 100%;
+  max-width: 1750px;
+  display: flex;
+  align-items: center;
+  overflow-x: scroll;
+  border-radius: 1rem;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  background-color: black;
+}
+
+main > article > div:first-child::-webkit-scrollbar {
+  display: none;
+}
+
+main > article > div:first-child > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  scroll-snap-align: start;
+  opacity: 0.7;
+}
+
+.starting-paper {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+  margin: 0 15%;
+  color: var(--navbar);
+  padding: 1rem;
+}
+
+.starting-paper h1 {
+  font-size: 50px;
+}
+
+.starting-paper > div {
+  background-color: var(--button);
+  border-radius: 2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.starting-paper > div > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  border-radius: inherit;
+  box-sizing: border-box;
+}
+
+.starting-paper > div:hover {
+  box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.562);
+}
+
+.starting-paper > div:active {
+  opacity: 0.8;
+}
+
+main > article > div:last-child {
+  position: absolute;
+  bottom: 2rem;
+  width: 60px;
+  height: 20px;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 1rem;
+}
+
+main > article > div:last-child > a {
+  height: 10px;
+  width: 10px;
+  background-color: var(--border);
+  border-radius: 50%;
+}
+
+main > section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  padding: 3rem 2rem;
+}
+
+main > section > div {
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
+
+main > section h1 {
+  color: rgb(70, 70, 70);
+  font-size: 35px;
+}
+
+main > section:nth-child(3) > div, main > section:nth-child(4) > div {
+  max-width: 800px;
+}
+
+main > section > div > div {
+  flex: 1;
+  min-width: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  text-align: center;
+  background-color: var(--border);
+  padding: 2rem 1rem;
+  border-radius: 1rem;
+  gap: 1rem;
+}
+
+main > section > div > div > p {
+  color: gray;
+}
+
+main > section img {
+  height: 60px;
+  object-fit: cover;
+}
+
+main > section:nth-child(4) > div > div {
+  display: block;
+}
+
+main > section:nth-child(4) > div > div p {
+  margin-top: 1rem;
+}
+
+main > section:nth-child(4) > div > div span {
+  font-size: 40px;
+  font-weight: 600;
+}
+
+main > section:nth-child(4) > div > div span:last-of-type {
+  color: var(--button);
+  margin-left: 1rem;
+  font-weight: 900;
+}
+
+main > section > div > div {
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0 cover 25%;
+  transition: scale 0.3s;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    scale: 0.2;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  main > section > div {
+    flex-direction: column;
+  }
+
+  main > section > div > div {
+    padding: 3rem 1rem;
+  }
+}
